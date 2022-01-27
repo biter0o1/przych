@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Terminarz{% endblock %}
+
+{% block body %}
+    <h1>Terminarz</h1>
+
+    <div style="width: 78vw">
+    <table class="table table-hover table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>Usluga</th>
+                <th>Pracownik</th>
+                <th>Data</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for terminarz in terminarzs %}
+            <tr>
+                <td>{{ terminarz.id }}</td>
+                <td>{{ terminarz.usluga }}</td>
+                <td>{{ terminarz.pracownik }}</td>
+                <td>{{ terminarz.data }}</td>
+                <td>
+                    <a href="{{ path('terminarz_show', {'id': terminarz.id}) }}">show</a>
+                    <a href="{{ path('terminarz_edit', {'id': terminarz.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+    <a href="{{ path('terminarz_new') }}">Create new</a>
+{% endblock %}

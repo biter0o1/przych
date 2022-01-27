@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Uslugi{% endblock %}
+
+{% block body %}
+    <h1>Uslugi</h1>
+
+    <div style="width: 78vw">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nazwa</th>
+                    <th>Opis</th>
+                    <th>Koszt</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for uslugi in uslugis %}
+                <tr>
+                    <td>{{ uslugi.id }}</td>
+                    <td>{{ uslugi.nazwa }}</td>
+                    <td>{{ uslugi.opis }}</td>
+                    <td>{{ uslugi.koszt }}</td>
+                    <td>
+                        <a href="{{ path('uslugi_show', {'id': uslugi.id}) }}">show</a>
+                        <a href="{{ path('uslugi_edit', {'id': uslugi.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Nie znaleziono</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <a href="{{ path('uslugi_new') }}">Create new</a>
+{% endblock %}

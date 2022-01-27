@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pracownik index{% endblock %}
+
+{% block body %}
+    <h1>Pracownik</h1>
+
+    <div style="width: 78vw">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nazwisko</th>
+                    <th>Imie</th>
+                    <th>Dyspozycyjnosc</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for pracownik in pracowniks %}
+                <tr>
+                    <td>{{ pracownik.id }}</td>
+                    <td>{{ pracownik.nazwisko }}</td>
+                    <td>{{ pracownik.imie }}</td>
+                    <td>{{ pracownik.dyspozycyjnosc }}</td>
+                    <td>
+                        <a href="{{ path('pracownik_show', {'id': pracownik.id}) }}">show</a>
+                        <a href="{{ path('pracownik_edit', {'id': pracownik.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Nie znaleziono</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <a href="{{ path('pracownik_new') }}">Create new</a>
+{% endblock %}

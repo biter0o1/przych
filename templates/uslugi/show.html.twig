@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Uslugi{% endblock %}
+
+{% block body %}
+    <h1>Uslugi</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ uslugi.id }}</td>
+            </tr>
+            <tr>
+                <th>Nazwa</th>
+                <td>{{ uslugi.nazwa }}</td>
+            </tr>
+            <tr>
+                <th>Opis</th>
+                <td>{{ uslugi.opis }}</td>
+            </tr>
+            <tr>
+                <th>Koszt</th>
+                <td>{{ uslugi.koszt }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('uslugi_index') }}">back to list</a>
+
+    <a href="{{ path('uslugi_edit', {'id': uslugi.id}) }}">edit</a>
+
+    {{ include('uslugi/_delete_form.html.twig') }}
+{% endblock %}
