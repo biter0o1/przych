@@ -5,7 +5,7 @@ namespace App\Repository;
 use App\Entity\KartaPacjenta;
 use App\Entity\Terminarz;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @method Terminarz|null find($id, $lockMode = null, $lockVersion = null)
