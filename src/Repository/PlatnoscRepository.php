@@ -5,8 +5,7 @@ namespace App\Repository;
 use App\Entity\KartaPacjenta;
 use App\Entity\Platnosc;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Common\Persistence\ManagerRegistry;
-
+use Doctrine\Persistence\ManagerRegistry;
 /**
  * @method Platnosc|null find($id, $lockMode = null, $lockVersion = null)
  * @method Platnosc|null findOneBy(array $criteria, array $orderBy = null)

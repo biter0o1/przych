@@ -5,7 +5,7 @@ namespace App\Repository;
 use App\Entity\KartaPacjenta;
 use App\Entity\TablicaOgloszen;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @method TablicaOgloszen|null find($id, $lockMode = null, $lockVersion = null)
